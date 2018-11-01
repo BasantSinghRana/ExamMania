@@ -1,0 +1,19 @@
+.loginForm{
+  width: 600px;
+  margin: auto;
+}
+
+.adminDiv{
+  width: 600px;
+  margin: auto;
+  padding-left: 400px;
+}
+
+.login{
+  padding: 30px;
+  padding-left: 220px;
+}
+
+.adminList{
+  list-style-type: none;
+}

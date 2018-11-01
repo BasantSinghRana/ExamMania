@@ -1,0 +1,12 @@
+<div class="">
+  <form novalidate class = "login">
+      Username:<br>
+      <input type="text" ng-model="user.username"><br>
+      Password:<br>
+      <input type="text" ng-model="user.password"><br>
+      Resume:<br>
+      <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+      <br><br>
+      <button ng-click="register()">Register</button>
+    </form>
+</div>

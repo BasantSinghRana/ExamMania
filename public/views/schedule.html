@@ -1,0 +1,11 @@
+<div class="">
+  <form novalidate class = "login">
+    <table>
+      <tr ng-repeat = "user in users">
+        <td>{{user.username}}</td>
+        <td>Set: <input type="text" ng-model="user.set"></td>
+      </tr>
+    </table> <br> <br>
+    <button ng-click="submit(users)">Submit</button>
+  </form>
+</div>
