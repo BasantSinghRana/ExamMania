@@ -20,7 +20,6 @@ app.controller('loginController', function($scope, $http, $location, $rootScope)
       }).then(function mySuccess(response) {
         var res = response.data;
         if(res.user_type === "admin"){
-          console.log("hi");
           $location.path('/admin');
         }
         else if(res.user_type === "user"){

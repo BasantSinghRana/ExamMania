@@ -10,7 +10,7 @@ app.controller('scheduleController', function($scope, $http) {
 
     console.log($scope.users);
   }, function myError(response) {
-    $scope.myWelcome = response.statusText;
+    myFunction("Something went wrong!")
   });
 
   $scope.submit = function(users){

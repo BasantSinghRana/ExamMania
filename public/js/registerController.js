@@ -13,9 +13,9 @@ app.controller('registerController', function($scope, $http) {
       transformRequest: angular.identity
     }).then(function mySuccess(response) {
       var res = response.data;
-      console.log(res);
+      myFunction(res);
     }, function myError(response) {
-      $scope.myWelcome = response.statusText;
+      myFunction("Something went wrong!");
     });
   }
 
@@ -33,7 +33,7 @@ app.controller('registerController', function($scope, $http) {
       console.log(res);
       myFunction(res);
     }, function myError(response) {
-      myFunction(response);
+      myFunction("Something went wrong!");
     });
   }
 
