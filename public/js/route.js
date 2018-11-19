@@ -3,6 +3,9 @@ var app = angular.module('ExamMania', ["ngRoute"]);
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
+        controller : 'examController'
+    })
+    .when("/login", {
         templateUrl : "views/login.html",
         controller : 'loginController'
     })
@@ -26,5 +29,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl : "views/schedule.html",
         controller : 'scheduleController'
     })
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 }]);

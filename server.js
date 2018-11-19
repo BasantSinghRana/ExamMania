@@ -67,11 +67,32 @@ app.post('/login', function(request, response) {
   var filepath = path.join(__dirname, "/public/json/users.json")
   fs.readFile(filepath, function (err, data) {
     var users = JSON.parse(data)
-    console.log(users);
+    // console.log(users);
     var result = users.filter(obj => {
       return obj.username === user.username && obj.password === user.password
     })
     response.send(result[0]);
+  })
+});
+
+app.post('/user', function(request, response) {
+  var user = {
+    username : request.body.username,
+    password : request.body.password
+  }
+  var filepath = path.join(__dirname, "/public/json/users.json")
+  fs.readFile(filepath, function (err, data) {
+    var users = JSON.parse(data)
+    // console.log(users);
+    var result = users.filter(obj => {
+      return obj.username === user.username && obj.password === user.password
+    })
+    var setpath = path.join(__dirname, "/public/questionsets/" + result[0].set + ".json")
+    console.log(setpath);
+    fs.readFile(setpath, function (err, data) {
+      var questions = JSON.parse(data)
+      response.send(questions);
+    })
   })
 });
 
@@ -85,18 +106,26 @@ app.post('/register', function(request, response) {
    var filepath = path.join(__dirname, "/public/json/users.json")
    fs.readFile(filepath, function (err, data) {
      var json = JSON.parse(data)
-     json.push(user)
-     console.log(json);
-
-     fs.writeFile(filepath, JSON.stringify(json))
+     var result = json.find(obj => {
+       return obj.username === user.username && obj.password === user.password
+     })
+     console.log("user", result);
+     if(result != undefined){
+       response.send("User already exists");
+     }
+     else{
+       json.push(user)
+       fs.writeFile(filepath, JSON.stringify(json))
+       response.send("User added");
+     }
    })
-  response.send("User added");
 });
 
 app.get('/users', function(request, response) {
    var filepath = path.join(__dirname, "/public/json/users.json")
    fs.readFile(filepath, function (err, data) {
      var json = JSON.parse(data)
+     json.shift();
      console.log(json);
      response.send(json);
    })

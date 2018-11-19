@@ -22,8 +22,16 @@ app.controller('scheduleController', function($scope, $http) {
       var res = response.data;
 
       console.log(res);
+      myFunction(res);
     }, function myError(response) {
-      $scope.myWelcome = response.statusText;
+      myFunction("Something went wrong!")
     });
+  }
+
+  function myFunction(text) {
+    var x = document.getElementById("snackbar");
+    x.innerHTML = text;
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000)
   }
 });
