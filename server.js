@@ -115,10 +115,14 @@ app.post('/register', function(request, response) {
      }
      else{
        json.push(user)
-       fs.writeFile(filepath, JSON.stringify(json))
-       response.send("User added");
+       fs.writeFile(filepath, JSON.stringify(json), function(err){
+         if(err) {
+           response.send("Oops! Something went wrong");
+         }
+         response.send("User added");
+       });
      }
-   })
+   });
 });
 
 app.get('/users', function(request, response) {
@@ -134,10 +138,14 @@ app.get('/users', function(request, response) {
 app.post('/mapSets', function(request, response) {
    var map = request.body
    var filepath = path.join(__dirname, "/public/json/users.json")
-   fs.writeFile(filepath, JSON.stringify(map))
-   response.send("Question mapping done!")
+   fs.writeFile(filepath, JSON.stringify(map), function(err){
+     if(err) {
+       response.send("Oops! Something went wrong");
+     }
+     response.send("Question mapping done!")
+   });
 });
 
-http.listen(8000, function () {
+http.listen(8080, function () {
   console.log('resume running!');
 });
