@@ -4,34 +4,39 @@
     "A" : 10,
     "B" : 11,
     "C" : 8,
-    "D" : 15
+    "D" : 15,
+    "Answer" : "B"
   },
   {
     "Question" : "How many players are there in one cricket team?",
     "A" : 10,
     "B" : 11,
     "C" : 8,
-    "D" : 15
+    "D" : 15,
+    "Answer" : "B"
   },
   {
     "Question" : "How many players are there in one cricket team?",
     "A" : 10,
     "B" : 11,
     "C" : 8,
-    "D" : 15
+    "D" : 15,
+    "Answer" : "B"
   },
   {
     "Question" : "How many players are there in one cricket team?",
     "A" : 10,
     "B" : 11,
     "C" : 8,
-    "D" : 15
+    "D" : 15,
+    "Answer" : "B"
   },
   {
     "Question" : "How many players are there in one cricket team?",
     "A" : 10,
     "B" : 11,
     "C" : 8,
-    "D" : 15
+    "D" : 15,
+    "Answer" : "B"
   }
 ]
