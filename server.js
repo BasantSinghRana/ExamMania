@@ -145,6 +145,6 @@ app.post('/mapSets', function(request, response) {
    });
 });
 
-http.listen(8000, function () {
+http.listen(process.env.PORT, function () {
   console.log('resume running!');
 });
