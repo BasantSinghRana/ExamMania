@@ -2,8 +2,25 @@
   width: 600px;
   margin: auto;
   border: 1px solid black;
-  height:
 }
+
+.setForm{
+  width: 600px;
+  margin: auto;
+  border: 1px solid black;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.userForm{
+  width: 800px;
+  margin: auto;
+  border: 1px solid black;
+  max-height: 500px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
 .inputbox{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -11,7 +28,14 @@
   font-size: 14px;
 }
 
-.buttonControls {
+.questionInputBox{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.loginbutton {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -27,10 +51,26 @@
     margin-bottom: 2px;
 }
 
+.registerbutton{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 13px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
 .adminDiv{
   width: 300px;
   margin: auto;
-  padding-left: 120px;
+  padding-left: 110px;
   border: 1px solid black;
 }
 
@@ -41,6 +81,8 @@
 
 .adminList{
   list-style-type: none;
+  padding-top: 10px;
+  margin-bottom: 0px;
 }
 
 .adminList li {
@@ -50,6 +92,42 @@
 a{
   text-decoration: none;
   font-size: 18px;
+}
+
+#logoutButton{
+  margin-top: -90px;
+  margin-bottom: 30px;
+  margin-left: 53px;
+}
+
+#backButton{
+  margin-top: -90px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+#setBackButton{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 40px;
+}
+
+.usernameRow{
+  padding-right: 10px;
+}
+
+.userDiv{
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.ques{
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+.userTable{
+  margin-left: -40px;
 }
 
 #snackbar {

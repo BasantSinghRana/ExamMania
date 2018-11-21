@@ -7,7 +7,6 @@ app.controller('scheduleController', function($scope, $http) {
     url : "/users"
   }).then(function mySuccess(response) {
     $scope.users = response.data;
-
     console.log($scope.users);
   }, function myError(response) {
     myFunction("Something went wrong!")

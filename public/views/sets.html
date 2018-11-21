@@ -1,7 +1,7 @@
-<div class="">
+<div class="setForm">
   <form novalidate class = "login">
-      Upload Question papers:<br><br>
-      <input type="file" name="file" accept = ".json" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-    </form><br><br>
-    <a ng-href = "/admin">Back</a>
+      Upload Question papers:<br>
+      <input type="file" name="file" class = "inputbox" accept = ".json" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+    <a ng-href = "/admin" class = "loginbutton" id = "setBackButton">Back</a>
+    </form>
 </div>

@@ -1,12 +1,12 @@
-<div class="">
+<div class="loginForm">
   <form novalidate class = "login">
-    <table>
-      <tr ng-repeat = "user in users">
-        <td>{{user.username}}</td>
-        <td>Set: <input type="text" ng-model="user.set"></td>
+    <table class = "userTable">
+      <tr ng-repeat = "user in users" ng-if = "!$first">
+        <td class = "usernameRow">{{user.username}}</td>
+        <td>Set: <input type="text" ng-model="user.set" class = "questionInputBox"></td>
       </tr>
-    </table> <br> <br>
-    <button ng-click="submit(users)">Submit</button>
-  </form><br><br>
-  <a ng-href = "/admin">Back</a>
+    </table> <br>
+    <a ng-href = "/admin" class = "loginbutton" id = "backButton">Back</a>
+    <button class = "registerbutton" ng-click="submit(users)">Submit</button>
+  </form>
 </div>

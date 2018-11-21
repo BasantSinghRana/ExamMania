@@ -107,7 +107,7 @@ app.post('/register', function(request, response) {
    fs.readFile(filepath, function (err, data) {
      var json = JSON.parse(data)
      var result = json.find(obj => {
-       return obj.username === user.username || obj.username === "deepak"
+       return obj.username === user.username || user.username === "deepak"
      })
      console.log("user", result);
      if(result != undefined){
@@ -129,7 +129,6 @@ app.get('/users', function(request, response) {
    var filepath = path.join(__dirname, "/public/json/users.json")
    fs.readFile(filepath, function (err, data) {
      var json = JSON.parse(data)
-     json.shift();
      console.log(json);
      response.send(json);
    })
@@ -146,6 +145,6 @@ app.post('/mapSets', function(request, response) {
    });
 });
 
-http.listen(8080, function () {
+http.listen(8000, function () {
   console.log('resume running!');
 });
