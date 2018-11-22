@@ -1,14 +1,19 @@
-<div class="userForm">
-  <form>
-    <div class = "userDiv" ng-repeat = "question in questions track by $index">
-      <p>{{question.Question}}</p>
+<div class="userForm" ng-class="{'scoreDiv': isans, 'scoreNoExamDiv': noexam}">
+  <form ng-if = "isques">
+    <div class = "userDiv" ng-repeat = "question in questions track by $index" ng-if = "ques_index == $index">
+      <p>{{ques_index + 1}}. {{question.Question}}</p>
       <input type="radio" ng-model="question.isSelected" value="{{question.A}}" class = "inputbox ques">{{question.A}}&nbsp;&nbsp;
       <input type="radio" ng-model="question.isSelected" value="{{question.B}}" class = "inputbox ques">{{question.B}}&nbsp;&nbsp;
       <input type="radio" ng-model="question.isSelected" value="{{question.C}}" class = "inputbox ques">{{question.C}}&nbsp;&nbsp;
       <input type="radio" ng-model="question.isSelected" value="{{question.D}}" class = "inputbox ques">{{question.D}}
     </div>
     <br>
-    <a ng-href = "/login" class = "loginbutton" id = "logoutButton">Logout</a>
-    <button ng-click="submit()" class = "registerbutton">Submit</button>
+    <!-- <a ng-href = "/login" class = "loginbutton" id = "logoutButton">Logout</a> -->
+    <button ng-click="prev()" id = "logoutButton" class = "registerbutton" ng-disabled ="previousDisabled" ng-class="{'disabled-class': previousDisabled}">Prev</button>
+    <button ng-click="next()" class = "registerbutton" ng-disabled = "nextDisabled" ng-class="{'disabled-class': nextDisabled}">Next</button>
+    <button ng-click="submit()" class = "registerbutton" ng-disabled = "submitDisabled" ng-class="{'disabled-class': submitDisabled}">Submit</button>
   </form>
+  <p ng-if = "isans" class = "score_para">Congrats your final score is {{score}}%.</p>
+  <p ng-if = "noexam" class = "score_para">Sorry! We couldnot find any exam scheduled for you. Please contact admin.</p>
+  <a ng-href = "/login" class = "loginbutton" id = "noExamLogoutButton" ng-if = "noexam">Logout</a>
 </div>

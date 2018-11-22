@@ -87,6 +87,9 @@ app.post('/user', function(request, response) {
     var result = users.filter(obj => {
       return obj.username === user.username && obj.password === user.password
     })
+    if(!result[0].set){
+      response.send([]);
+    }
     var setpath = path.join(__dirname, "/public/questionsets/" + result[0].set + ".json")
     console.log(setpath);
     fs.readFile(setpath, function (err, data) {
@@ -126,12 +129,24 @@ app.post('/register', function(request, response) {
 });
 
 app.get('/users', function(request, response) {
-   var filepath = path.join(__dirname, "/public/json/users.json")
-   fs.readFile(filepath, function (err, data) {
-     var json = JSON.parse(data)
-     console.log(json);
-     response.send(json);
-   })
+  var questionInfo = {};
+  var filepath = path.join(__dirname, "/public/json/users.json")
+  fs.readFile(filepath, function (err, data) {
+    var json = JSON.parse(data)
+    console.log(json);
+    questionInfo["users"] = json;
+    var dirpath = path.join(__dirname, "/public/questionsets")
+    fs.readdir(dirpath, function(err, items) {
+      console.log(items);
+      for (var i=0; i<items.length; i++) {
+        console.log(items[i]);
+        items[i] = items[i].replace(".json", "");
+      }
+      questionInfo["sets"] = items;
+      response.send(questionInfo);
+    });
+  })
+
 });
 
 app.post('/mapSets', function(request, response) {
@@ -145,6 +160,6 @@ app.post('/mapSets', function(request, response) {
    });
 });
 
-http.listen(process.env.PORT, function () {
+http.listen(8000, function () {
   console.log('resume running!');
 });

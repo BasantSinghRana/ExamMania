@@ -21,6 +21,15 @@
   overflow-x: scroll;
 }
 
+.scheduleForm{
+  width: 600px;
+  margin: auto;
+  border: 1px solid black;
+  max-height: 500px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
 .inputbox{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -100,6 +109,12 @@ a{
   margin-left: 53px;
 }
 
+#noExamLogoutButton{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 360px;
+}
+
 #backButton{
   margin-top: -90px;
   margin-bottom: 0px;
@@ -127,7 +142,27 @@ a{
 }
 
 .userTable{
-  margin-left: -40px;
+  margin-left: 6px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+.score_para{
+  text-align: center;
+}
+
+.scoreDiv{
+  background-color: antiquewhite;
+}
+
+.scoreNoExamDiv{
+  background-color: antiquewhite;
+}
+
+.disabled-class{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 #snackbar {
@@ -142,7 +177,7 @@ a{
     position: fixed;
     z-index: 1;
     left: 50%;
-    bottom: 30px;
+    bottom: 120px;
     font-size: 17px;
 }
 
@@ -154,20 +189,20 @@ a{
 
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 120px; opacity: 1;}
 }
 
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 120px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 120px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 120px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }

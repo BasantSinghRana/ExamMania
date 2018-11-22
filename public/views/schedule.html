@@ -1,11 +1,12 @@
-<div class="loginForm">
+<div class="scheduleForm">
   <form novalidate class = "login">
     <table class = "userTable">
       <tr ng-repeat = "user in users" ng-if = "!$first">
         <td class = "usernameRow">{{user.username}}</td>
-        <td>Set: <input type="text" ng-model="user.set" class = "questionInputBox"></td>
+        <td><select ng-model="user.set" ng-options="set for set in sets" class = "inputbox">
+</select></td>
       </tr>
-    </table> <br>
+    </table>
     <a ng-href = "/admin" class = "loginbutton" id = "backButton">Back</a>
     <button class = "registerbutton" ng-click="submit(users)">Submit</button>
   </form>

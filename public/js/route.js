@@ -1,4 +1,4 @@
-var app = angular.module('ExamMania', ["ngRoute"]);
+var app = angular.module('ExamMania', ["ngRoute", "ngCookies"]);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider

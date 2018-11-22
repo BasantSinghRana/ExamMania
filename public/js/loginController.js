@@ -1,9 +1,7 @@
 
 var app = angular.module('ExamMania');
 
-app.controller('loginController', function($scope, $http, $location, $rootScope) {
-    window.onbeforeunload = function() { return false; };
-    window.onpopstate = function (e) { window.history.forward(1); }
+app.controller('loginController', function($scope, $http, $location, $rootScope, $cookies) {
 
     $scope.login = function(){
       if(!$scope.user || (!$scope.user.username || !$scope.user.password)){

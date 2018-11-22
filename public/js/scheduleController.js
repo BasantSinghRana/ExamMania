@@ -6,8 +6,10 @@ app.controller('scheduleController', function($scope, $http) {
     method : "GET",
     url : "/users"
   }).then(function mySuccess(response) {
-    $scope.users = response.data;
+    $scope.users = response.data.users;
+    $scope.sets = response.data.sets;
     console.log($scope.users);
+    console.log($scope.sets);
   }, function myError(response) {
     myFunction("Something went wrong!")
   });
